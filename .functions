@@ -72,6 +72,42 @@ function gitexport(){
 
 
 
+
+#################
+# CUSTOM
+########
+
+function replacepb() {
+    pbpaste >> ~/Desktop/temp-find-replace.txt
+
+    # find and replace based on supplied regex
+    sed s/"$1"// ~/Desktop/temp-find-replace.txt
+}
+
+
+function rotatemamplog(){
+    mv /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/php_error-`date +%Y-%m%d_%H-%M`.log
+    touch /Applications/MAMP/logs/php_error.log
+}
+#############
+# remove text matching a regex from the pasteboard
+#
+#  e.g. replace whitespace at start of each line use:
+#
+#  '^[ \t]*'
+#
+############
+function removepb() {
+    pbpaste > ~/Desktop/temp-find-replace.txt
+
+    # find and replace based on supplied regex
+    sed s/"$1"// ~/Desktop/temp-find-replace.txt | pbcopy
+    # paste converted text to temp file
+    #pbpaste > ~/Desktop/temp-find-replace.txt
+}
+
+
+
 # get gzipped size
 function gz() {
 	echo "orig size    (bytes): "
