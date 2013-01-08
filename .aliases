@@ -13,6 +13,12 @@ alias apps="cd ~/Applications"
 alias dotfiles="cd ~/_dotfiles"
 alias sites="cd ~/Sites"
 
+#########
+# WEBDEV
+########
+alias lrc="cd ~/Sites/LRC"
+alias gr="grunt"
+
 ###########
 # Programs
 ########
@@ -98,6 +104,15 @@ alias flush="dscacheutil -flushcache"
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
+# WIFI
+alias wifioff="networksetup -setairportpower en1 off"
+alias wifion="networksetup -setairportpower en1 on"
+alias wificycle="networksetup -setairportpower en1 off;networksetup -setairportpower en1 on"
+
+# Bluetooth
+alias bon="blueutil on"
+alias boff="blueutil off"
+
 # Canonical hex dump; some systems have this symlinked
 #type -t hd > /dev/null || alias hd="hexdump -C"
 
@@ -151,4 +166,5 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 alias raspmc="ssh pi@192.168.1.50"
 alias raspbmc="ssh pi@192.168.1.50"
+alias rmc="ssh pi@192.168.1.50"
 alias shutdownrp="sudo halt"
