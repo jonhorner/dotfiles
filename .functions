@@ -1,3 +1,44 @@
+# optimise for battery
+function lowpower(){
+
+    # quit unneeded apps
+    for app in "Bartender" "Calendar" "Dropbox" "Mail" "Sparrow Lite" "Breeze" "Activity Monitor";
+     do killall "$app" > /dev/null 2>&1
+    done
+
+    # Turn bluetooth off
+    # requires blueutil: http://www.frederikseiffert.de/blueutil/
+    blueutil off
+
+    # turn wifi off
+    networksetup -setairportpower en1 off
+
+    # stop hazel
+    defaults write com.noodlesoft.HazelHelper RunState -bool YES;killall HazelHelper;open -a HazelHelper
+    
+}
+
+
+function highpower(){
+
+    # quit unneeded apps
+    for app in "Bartender" "Dropbox" "Sparrow Lite" "Breeze";
+     do open -a "$app"
+    done
+
+    # Turn bluetooth on
+    # requires blueutil: http://www.frederikseiffert.de/blueutil/
+    blueutil on
+
+
+    # turn wifi on
+    networksetup -setairportpower en1 on
+
+    # Start hazel
+    defaults write com.noodlesoft.HazelHelper RunState -bool NO;killall HazelHelper;open -a HazelHelper
+}
+
+
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
