@@ -54,3 +54,10 @@ cache/*
 administrator/components/com_sh404sef/logs/*
 components/com_sh404sef/cache/*
 logs
+tincr.json
+UserInterfaceState.xcuserstate
+Breakpoints.xcbkptlist
+*.swf
+*.fla
+*.fla
+contents.xcworkspacedata
