@@ -39,6 +39,32 @@ function highpower(){
 }
 
 
+###########
+# WEB DEV
+###########
+
+function installgrunt(){
+
+    # Grunt 0.4a
+    #sudo npm install grunt@0.4.0a --save-dev
+    
+    # Grunt 0.3
+    sudo npm install grunt --save-dev
+
+    #sudo npm install grunt-recess
+    sudo npm install grunt-contrib-less --save-dev
+    sudo npm install grunt-css --save-dev
+    sudo npm install grunt-minified --save-dev
+    sudo npm install grunt-text-replace --save-dev
+    sudo npm install grunt-modernizr --save-dev
+    #sudo npm install grunt-bump --save-dev
+    sudo npm install grunt-hashres --save-dev
+    
+    #sudo npm install grunt-crusher --save-dev
+    #sudo npm install grunt-img --save-dev
+    #sudo npm install grunt-contrib-imagemin --save-dev
+}
+
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
