@@ -65,6 +65,67 @@ function installgrunt(){
     #sudo npm install grunt-contrib-imagemin --save-dev
 }
 
+
+# Tagging
+
+function tag(){
+    #echo "$1 and $2"
+
+    bold=`tput bold`
+    normal=`tput sgr0`
+
+    for word in $1;
+        do openmeta -a $word -p $2
+        sleep 1
+    done
+
+    echo "tags: ${bold}$1 ${normal}added to file"
+}
+
+
+function tchris(){
+    openmeta -a work chris -p $1
+
+    #showtags $2
+}
+
+function tshaun(){
+    openmeta -a work shaun -p $1
+
+    #showtags $2
+}
+
+function trg(){
+    openmeta -a work roofglaze -p $1
+
+    #showtags $2
+}
+
+function tag2() {
+    openmeta -a $1 -p $2
+
+    #showtags $2
+
+    #http://www.nxhelp.com/2012/09/command-line-openmeta-tagging-on-macos/
+    #http://ironicsoftware.com/vanillaforums/discussion/979/keeping-organized
+
+    #(list tags and ratings):  openmeta -p PATH
+    #(list tags and ratings multiple):  openmeta -p PATH PATH
+    #(list tags): openmeta -t -p PATH[s]
+    #(add tags): openmeta -a foo bar -p PATH[s]
+    #(add tags with spaces): openmeta -a "three word tag" "foo bar" -p PATH[s]
+    #(set tags):  openmeta -s foo bar -p PATH[s]
+    #(clear all tags):  openmeta -s -p PATH[s]
+    #(set rating 0 - 5 stars):  openmeta -r 3.5 -p PATH[s]
+    #(print rating):  openmeta -r -p PATH[s]
+    #(clear rating):  openmeta -r 0.0 -p PATH[s]
+    #(lousy rating):  openmeta -r 0.1 -p PATH[s]
+}
+
+function showtags(){
+    openmeta -t -p $1
+}
+
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
