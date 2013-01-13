@@ -168,3 +168,5 @@ alias raspmc="ssh pi@192.168.1.50"
 alias raspbmc="ssh pi@192.168.1.50"
 alias rmc="ssh pi@192.168.1.50"
 alias shutdownrp="sudo halt"
+
+alias logout="osascript -e 'tell application \"System Events\" to log out'"
