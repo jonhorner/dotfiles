@@ -44,6 +44,10 @@ alias vhosts='$EDITOR /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
 
 alias deletedsstore="find . -name '*.DS_Store' -type f -delete"
 alias deleteds="find . -name '*.DS_Store' -type f -delete"
+
+# eject external disk
+alias ejectall="find /Volumes -maxdepth 1 -not -user root -print0 | xargs -0 diskutil eject"
+
 # be nice
 alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
