@@ -42,6 +42,8 @@ alias osx='open ~/_dotfiles/.osx'
 alias hosts='sudo $EDITOR /etc/hosts'
 alias vhosts='$EDITOR /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
 
+alias deletedsstore="find . -name '*.DS_Store' -type f -delete"
+alias deleteds="find . -name '*.DS_Store' -type f -delete"
 # be nice
 alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.com ;)
