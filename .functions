@@ -58,7 +58,7 @@ function installgrunt(){
     sudo npm install grunt-text-replace --save-dev
     sudo npm install grunt-modernizr --save-dev
     #sudo npm install grunt-bump --save-dev
-    sudo npm install grunt-hashres --save-dev
+    #sudo npm install grunt-hashres --save-dev
     
     #sudo npm install grunt-crusher --save-dev
     #sudo npm install grunt-img --save-dev
