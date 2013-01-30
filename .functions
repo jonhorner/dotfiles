@@ -173,6 +173,13 @@ AWK
 }
 
 
+# Quick Commit
+function gcommit(){
+    git add -A;
+    git commit -m "$1";
+    echo "\nCommit $1 completed";
+}
+
 # Copy w/ progress
 cp_p () {
   rsync -WavP --human-readable --progress $1 $2
