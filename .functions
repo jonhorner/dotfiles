@@ -38,6 +38,10 @@ function highpower(){
     defaults write com.noodlesoft.HazelHelper RunState -bool NO;killall HazelHelper;open -a HazelHelper
 }
 
+function evening(){
+     ejectall;
+     boff;
+}
 
 ###########
 # WEB DEV
@@ -58,7 +62,7 @@ function installgrunt(){
     sudo npm install grunt-text-replace --save-dev
     sudo npm install grunt-modernizr --save-dev
     #sudo npm install grunt-bump --save-dev
-    sudo npm install grunt-hashres --save-dev
+    #sudo npm install grunt-hashres --save-dev
     
     #sudo npm install grunt-crusher --save-dev
     #sudo npm install grunt-img --save-dev
@@ -137,6 +141,11 @@ function f() {
     find . -name "$1"
 }
 
+# cd into whatever is the forefront Finder window.
+cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
 
 # lets toss an image onto my server and pbcopy that bitch.
 function scpp() {
@@ -167,6 +176,13 @@ AWK
   )" | less -F
 }
 
+
+# Quick Commit
+function gcommit(){
+    git add -A;
+    git commit -m "$1";
+    echo "\nCommit $1 completed";
+}
 
 # Copy w/ progress
 cp_p () {

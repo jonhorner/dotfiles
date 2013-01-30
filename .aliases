@@ -18,6 +18,7 @@ alias sites="cd ~/Sites"
 ########
 alias lrc="cd ~/Sites/LRC"
 alias gr="grunt"
+alias lint="csslint"
 
 ###########
 # Programs
@@ -26,6 +27,8 @@ alias slt='open -a "Sublime Text 2"'
 # also/or do this:
 # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 alias webapps='open -a "Sublime Text 2" && open -a "LiveReload" && open -a "SourceTree" && open -a "Google Chrome Canary"'
+alias casp="casperjs"
+
 
 #######
 # Files
@@ -41,6 +44,14 @@ alias osx='open ~/_dotfiles/.osx'
 
 alias hosts='sudo $EDITOR /etc/hosts'
 alias vhosts='$EDITOR /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf'
+
+alias symlink="ln -s "
+
+alias deletedsstore="find . -name '*.DS_Store' -type f -delete"
+alias deleteds="find . -name '*.DS_Store' -type f -delete"
+
+# eject external disk
+alias ejectall="find /Volumes -maxdepth 1 -not -user root -print0 | xargs -0 diskutil eject"
 
 # be nice
 alias please=sudo
@@ -168,3 +179,5 @@ alias raspmc="ssh pi@192.168.1.50"
 alias raspbmc="ssh pi@192.168.1.50"
 alias rmc="ssh pi@192.168.1.50"
 alias shutdownrp="sudo halt"
+
+alias logout="osascript -e 'tell application \"System Events\" to log out'"
