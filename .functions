@@ -38,6 +38,10 @@ function highpower(){
     defaults write com.noodlesoft.HazelHelper RunState -bool NO;killall HazelHelper;open -a HazelHelper
 }
 
+function evening(){
+     ejectall;
+     boff;
+}
 
 ###########
 # WEB DEV
