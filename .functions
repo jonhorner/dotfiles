@@ -178,10 +178,16 @@ AWK
 
 
 # Quick Commit
-function gcommit(){
+function gcom(){
     git add -A;
     git commit -m "$1";
     echo "\nCommit $1 completed";
+}
+
+# Git amend
+function gamend(){
+   git commit --amend -am "$1"
+   echo "Commit Updated: $1";
 }
 
 # Copy w/ progress
