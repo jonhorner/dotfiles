@@ -1,5 +1,5 @@
 # Add ~/bin to path
-export PATH=~/bin:$PATH
+export PATH=~/.rbenv/shims:~/bin:$PATH:/usr/local/git/bin/
 
 # Make Sublime the default editor
 export EDITOR='subl'

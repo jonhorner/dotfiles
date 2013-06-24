@@ -54,6 +54,8 @@ cache/*
 administrator/components/com_sh404sef/logs/*
 components/com_sh404sef/cache/*
 logs
+configuration.php
+
 tincr.json
 UserInterfaceState.xcuserstate
 Breakpoints.xcbkptlist
@@ -61,3 +63,4 @@ Breakpoints.xcbkptlist
 *.fla
 *.fla
 contents.xcworkspacedata
+node_modules

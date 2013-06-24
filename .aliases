@@ -13,11 +13,16 @@ alias downloads="cd ~/Downloads"
 alias apps="cd ~/Applications"
 alias dotfiles="cd ~/_dotfiles"
 alias sites="cd ~/Sites"
+alias kw="cd ~/Development/kw-analysis"
 
 #########
 # WEBDEV
 ########
 alias lrc="cd ~/Sites/LRC"
+alias rg="cd ~/Sites/rg2013"
+alias rng="cd ~/Sites/rooflights"
+alias sagepay="cd ~/Sites/PLUGINS/JOOMLA/vmpayment/sagepay"
+alias h2o="cd ~/Sites/H2O2012"
 alias gr="grunt"
 alias lint="csslint"
 
@@ -29,7 +34,6 @@ alias slt='open -a "Sublime Text 2"'
 # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 alias webapps='open -a "Sublime Text 2" && open -a "LiveReload" && open -a "SourceTree" && open -a "Google Chrome Canary"'
 alias casp="casperjs"
-
 
 #######
 # Files
@@ -97,12 +101,11 @@ fi
 # Undo a `git push`
 #alias undopush="git push -f origin HEAD^:master"
 
-
 # git root
 #alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+#alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 

@@ -1,8 +1,17 @@
+# bypass GateKeeper
+function bypass(){
+	xattr -d com.apple.quarantine $1
+}
+
+function ip(){
+    dig +short myip.opendns.com @resolver1.opendns.com | pbcopy
+}
+
 # optimise for battery
 function lowpower(){
 
     # quit unneeded apps
-    for app in "Bartender" "Calendar" "Dropbox" "Mail" "Sparrow Lite" "Breeze" "Activity Monitor";
+    for app in "Bartender" "Calendar" "Dropbox" "Mail" "Sparrow Lite" "Breeze" "Activity Monitor" "Sip";
      do killall "$app" > /dev/null 2>&1
     done
 
@@ -14,15 +23,15 @@ function lowpower(){
     networksetup -setairportpower en1 off
 
     # stop hazel
-    defaults write com.noodlesoft.HazelHelper RunState -bool YES;killall HazelHelper;open -a HazelHelper
+    defaults write com.noodlesoft.HazelHelper RunState -bool NO;killall HazelHelper;open -a HazelHelper
     
 }
 
 
 function highpower(){
 
-    # quit unneeded apps
-    for app in "Bartender" "Dropbox" "Sparrow Lite" "Breeze";
+    # open required apps
+    for app in "Bartender" "Dropbox" "Sparrow Lite" "Breeze" "Vitamin-R" "Sip";
      do open -a "$app"
     done
 
@@ -35,7 +44,7 @@ function highpower(){
     networksetup -setairportpower en1 on
 
     # Start hazel
-    defaults write com.noodlesoft.HazelHelper RunState -bool NO;killall HazelHelper;open -a HazelHelper
+    defaults write com.noodlesoft.HazelHelper RunState -bool YES;killall HazelHelper;open -a HazelHelper
 }
 
 function evening(){
@@ -48,12 +57,13 @@ function evening(){
 ###########
 
 function installgrunt(){
+    # add create package file
 
     # Grunt 0.4a
-    #sudo npm install grunt@0.4.0a --save-dev
+    sudo npm install grunt --save-dev
     
     # Grunt 0.3
-    sudo npm install grunt --save-dev
+    #sudo npm install grunt --save-dev
 
     #sudo npm install grunt-recess
     sudo npm install grunt-contrib-less --save-dev
@@ -163,19 +173,6 @@ function server() {
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-# git log with per-commit cmd-clickable GitHub URLs (iTerm)
-function gf() {
-  local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
-  [[ "$remote" ]] || return
-  local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
-  git log $* --name-status --color | awk "$(cat <<AWK
-    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
-    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
-    /.*/ {print \$0}
-AWK
-  )" | less -F
-}
-
 
 # Quick Commit
 function gcom(){
@@ -188,6 +185,14 @@ function gcom(){
 function gamend(){
    git commit --amend -am "$1"
    echo "Commit Updated: $1";
+}
+
+# Git changed files
+function gchanged(){
+  git diff --name-only
+}
+function gdiff(){
+  git diff --name-only
 }
 
 # Copy w/ progress
@@ -235,7 +240,7 @@ function replacepb() {
 }
 
 
-function rotatemamplog(){
+function mamplog(){
     mv /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/php_error-`date +%Y-%m%d_%H-%M`.log
     touch /Applications/MAMP/logs/php_error.log
 }
@@ -304,4 +309,25 @@ function extract() {
 	else
 		echo "'$1' is not a valid file"
 	fi
+}
+
+# Amazon glacier-cli
+# https://github.com/basak/glacier-cli/blob/master/README.md
+
+function glacierupload(){
+   if [ -f $1 ] ; then
+  	glacier archive upload $2 $1
+   else
+     echo "'$1' is not a valid file"
+     echo "Usage: glacierupload() [PATH_TO_FILE] [VAULT]"
+   fi
+}
+
+function glacierlistphotos(){
+    glacier archive list photos
+}
+
+# Security
+function bitbucketpwd(){
+    security find-internet-password -a jonhorner -s bitbucket.org -w
 }
