@@ -199,6 +199,10 @@ function mamplog(){
     mv /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/php_error-`date +%Y-%m%d_%H-%M`.log
     touch /Applications/MAMP/logs/php_error.log
 }
+function phplog(){
+    mv /Applications/MAMP/logs/php_error.log /Applications/MAMP/logs/php_error-`date +%Y-%m%d_%H-%M`.log
+    touch /Applications/MAMP/logs/php_error.log
+}
 #############
 # remove text matching a regex from the pasteboard
 #
