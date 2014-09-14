@@ -29,7 +29,9 @@ alias brewery="cd ~/Sites/brewery"
 alias j3="cd ~/Sites/Joomla3"
 alias joomla="cd ~/Sites/Joomla3"
 alias gr="grunt"
-alias lint="csslint"
+alias watch="grunt watch"
+alias lint="grunt csslint"
+alias test="grunt test"
 
 ###########
 # Programs
