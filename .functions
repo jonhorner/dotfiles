@@ -1,3 +1,7 @@
+# Create datauri from file
+function datauri(){
+    echo -n `$1` | base64 | pbcopy;
+}
 # bypass GateKeeper
 function bypass(){
 	xattr -d com.apple.quarantine $1
