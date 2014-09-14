@@ -27,7 +27,7 @@ function startupapps(){
 function lowpower(){
 
     # quit unneeded apps
-    for app in "Bartender" "Calendar" "Dropbox" "Mail" "Sparrow Lite" "Breeze" "Activity Monitor" "Sip";
+    for app in "Fresh" "Bartender" "Calendar" "Dropbox" "Mail" "Sparrow Lite" "AirMail Beta" "Breeze" "Activity Monitor" "Sip" "Radium" "Typinator" "PopClip" "Dock" "MagicPrefs";
      do killall "$app" > /dev/null 2>&1
     done
 
@@ -47,7 +47,7 @@ function lowpower(){
 function highpower(){
 
     # open required apps
-    for app in "Bartender" "Dropbox" "Sparrow Lite" "Breeze" "Vitamin-R" "Sip";
+    for app in "Bartender" "Fresh" "Dropbox" "Breeze" "Vitamin-R" "Sip" "PopClip" "Typinator" "MagicPrefs";
      do open -a "$app"
     done
 
