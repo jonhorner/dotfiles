@@ -11,6 +11,18 @@ function ip(){
     dig +short myip.opendns.com @resolver1.opendns.com | pbcopy
 }
 
+
+function startupapps(){
+  
+  # open required apps
+  for app in "ControlPlane" "Quicksilver" "Bartender" "PopClip" "Typinator" "Fantastical" "BetterTouchTool" "ClustersHelper" "HazelHelper" "TotalTerminal" "MAMP";
+    do open -a "$app"
+  done
+
+  sudo postfix start;
+
+}
+
 # optimise for battery
 function lowpower(){
 
