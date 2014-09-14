@@ -19,10 +19,15 @@ alias kw="cd ~/Development/kw-analysis"
 # WEBDEV
 ########
 alias lrc="cd ~/Sites/LRC"
-alias rg="cd ~/Sites/rg2013"
+alias rg="cd ~/Sites/rg2013/jupgrade"
 alias rng="cd ~/Sites/rooflights"
 alias sagepay="cd ~/Sites/PLUGINS/JOOMLA/vmpayment/sagepay"
 alias h2o="cd ~/Sites/H2O2012"
+alias uaus="cd ~/Sites/UAUS2012"
+alias shop="cd ~/Sites/quotes4shopping"
+alias brewery="cd ~/Sites/brewery"
+alias j3="cd ~/Sites/Joomla3"
+alias joomla="cd ~/Sites/Joomla3"
 alias gr="grunt"
 alias lint="csslint"
 
