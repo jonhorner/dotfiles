@@ -64,3 +64,6 @@ Breakpoints.xcbkptlist
 *.fla
 contents.xcworkspacedata
 node_modules
+Gruntfile.js
+.jshintrc
+*.chproj
