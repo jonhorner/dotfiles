@@ -4,7 +4,7 @@ function datauri(){
 }
 # bypass GateKeeper
 function bypass(){
-	xattr -d com.apple.quarantine $1
+	 xattr -d com.apple.quarantine $1
 }
 
 function ip(){
@@ -71,6 +71,9 @@ function evening(){
 ###########
 # WEB DEV
 ###########
+function npminstall(){
+  npm install "$1" --save-dev
+}
 
 function installgrunt(){
     # add create package file
