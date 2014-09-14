@@ -189,9 +189,9 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 # Rapsberry Pi
 ##############
 
-alias raspmc="ssh pi@192.168.1.50"
-alias raspbmc="ssh pi@192.168.1.50"
-alias rmc="ssh pi@192.168.1.50"
+alias raspmc="ssh pi@192.168.1.3"
+alias raspbmc="ssh pi@192.168.1.3"
+alias rmc="ssh pi@192.168.1.3"
 alias shutdownrp="sudo halt"
 
 alias logout="osascript -e 'tell application \"System Events\" to log out'"
