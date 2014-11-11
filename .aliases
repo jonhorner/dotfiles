@@ -21,6 +21,9 @@ alias kw="cd ~/Development/kw-analysis"
 # WEBDEV
 ########
 alias flush="dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+alias roses="cd ~/Sites/Aspire/Sites/Roses"
+
 alias lrc="cd ~/Sites/LRC"
 alias rg="cd ~/Sites/rg2013/jupgrade"
 alias rng="cd ~/Sites/rooflights"
