@@ -112,6 +112,10 @@ fi
 
 # GIT STUFF
 
+alias push="git push"
+alias fetch="git fetch"
+alias oull="git pull"
+
 # Undo a `git push`
 #alias undopush="git push -f origin HEAD^:master"
 
