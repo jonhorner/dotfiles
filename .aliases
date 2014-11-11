@@ -13,6 +13,8 @@ alias downloads="cd ~/Downloads"
 alias apps="cd ~/Applications"
 alias dotfiles="cd ~/_dotfiles"
 alias sites="cd ~/Sites"
+alias wpsites="cd ~/Sites/WordpressItems"
+alias wptemp="~/Sites/WordpressItems/DevDmBootstrap3"
 alias kw="cd ~/Development/kw-analysis"
 
 #########
