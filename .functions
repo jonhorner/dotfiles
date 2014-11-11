@@ -1,3 +1,46 @@
+# set up up git repo on gitlab first, then run this
+# usage: aspire init [website-com] or aspire init [group-name] [website-com]
+function aspire() {
+  if [ $1 == "init" ]
+    then
+      GROUP="aspire"
+      if [ -n "$3" ]
+        then
+          GROUP=$3
+      fi
+      mkdir $2
+      cd $2
+      git init;
+      git flow init;
+      cat >> .git/config <<EOL
+[user]
+  name = Jon Horner
+  email = jon@aspirecreative.co.uk
+EOL
+      git checkout develop
+      mkdir httpdocs
+      cat >> README.md <<EOL
+README
+EOL
+      git add .
+      git commit -am "Initial commit"
+      git remote add origin git@aspire.endocom.net:"$GROUP"/"$2".git
+      git push -u origin develop
+      # git checkout master
+      echo $GREEN "Git configured for" `git config user.name` "at Aspire Creative" 
+  elif [ $1 == "user" ]
+    then
+      cat >> .git/config <<EOL
+[user]
+  name = Jon Horner
+  email = jon@aspirecreative.co.uk
+EOL
+      echo $GREEN "Git user added for " `git config user.name` "at Aspire Creative" 
+  fi
+}
+
+
+
 # Create datauri from file
 function datauri(){
     echo -n `$1` | base64 | pbcopy;
