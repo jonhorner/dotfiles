@@ -35,6 +35,7 @@ alias gr="grunt"
 alias watch="grunt watch"
 alias lint="grunt csslint"
 alias test="grunt test"
+alias uncss="grunt uncss"
 
 ###########
 # Programs
